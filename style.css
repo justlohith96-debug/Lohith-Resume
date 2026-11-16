@@ -1,0 +1,244 @@
+/* =======================================
+LOHITH'S PERSONAL RESUME WEBSITE EXTERNAL CSS STYLESHEET ======================================= */
+/*1.CSS variables and colours*/
+:root {
+    --navy: #14213d;
+    --blue: #2563eb;
+    --light-blue: #eef4ff;
+    --white: #ffffff;
+    --text: #263247;
+    --muted: #64748b;
+}
+/*2. Universal selector and box model*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*3.Element selector and font styling*/
+html{
+    font-family:arial,Helvetica,sans-serif;
+    background-color: #f5f7fb;
+    color: var(--text);
+    line-height: 1.6;
+}
+/*4. Header and navigation*/.site-header {
+    background-color: var(--navy);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+/*pseudo-class selector*/
+.nav-links a:hover {
+    color: #93c5fd;
+}
+/*5. Hero section*/.hero{
+    min-height:430px;
+    padding:90px 24px;
+    background: linear-gradient(135deg,#14213d,#2563eb);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+.hero-content{
+    max-width:720px;
+    position: relative;
+}
+.welcome{
+    font-size: 13px;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+}
+.hero h1{
+    font-size:44px;
+    margin-bottom: 8px;
+}
+.hero h1 span{
+    color: #93c5fd;
+}
+.hero h2{
+    font-size: 20px;
+    margin-bottom:16px;
+    font-weight:normal;
+}
+.hero-content>p:not(.welcome) {margin-bottom: 24px;}
+/*Button styling*/
+.btn {
+    display: inline-block;
+    padding: 11px 25px;
+    background-color: var(--blue);
+    color: var(--navy);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color:#bfdbfe;
+}
+/*6. General section styling*/
+section {
+    padding:65px 24px;
+    max-width: 1100px;
+    margin: auto;
+}
+.section-title {
+    font-size: 28px;
+    margin-bottom: 28px;
+    text-align: center;
+    color: var(--navy);
+}
+/*ID selector*/
+#about {
+    scroll-margin-top:75px;
+}
+#eduction,
+#skills,
+#contact{
+    scroll-margin-top:75px;
+}
+/*7. About card*/
+.about-card {
+    max-width:800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(20, 33, 61, 0.08);
+    text-align: center;
+}
+/*8. Alternate background section*/
+.alternate{
+    background-color: var(--light-blue);
+    max-width: none;
+}
+.alternate>*{
+    max-width: 1052px;
+    marginleft: auto;
+    margin-right: auto;
+}
+/*9. education table*/
+.table-container{
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+   background-color:var(--white);
+}
+th,
+td{
+    padding: 15px;
+    border:1px solid #dbe3ef;
+    text-align:left;
+}
+th{
+    background-color: var(--navy);
+    color:var(--white);
+}
+/*10. skills cards using CSS Grid*/
+.card-grid{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap: 22px;
+}
+.info-card{
+    background-color: var(--white);
+    padding: 26px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(20, 33, 61, 0.08);
+    transition: transform 0.3s ease;
+}
+.info-card:hover{
+    transform:translateY(-5px);
+}
+.info-card h3{
+    color: var(--blue);
+    margin-botton:10px;
+}
+/*11. Contact section*/
+.contact-card{
+    text-align:center;
+    background-color: var(--white);
+    padding:28px;
+    border-radius:12px;
+    box-shadow:0 4px 18px rgba(20, 33, 61, 0.08);
+}
+.email-link{
+    display:inline-block;
+    color:var(--blue);
+    font-weight: bold;
+    margin-top:10px;
+    text-decoration:none;
+}
+.email-link:hover{
+    text-decoration:underline;
+}
+/*12.Footer*/
+.footer{
+    background-color:var(--navy);
+    color:var(--white);
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+}
+/*13. Pseudo-element selector*/
+.section-title::after{
+    content:"";
+    width:55px;
+    height:3px;
+    background-color:var(--blue);
+    margin:10px auto 0;
+}
+/*14. Responsive design for smaller screens*/
+@media screen and (max-width: 700px)
+{
+    .navbar{
+        flex-direcion:column;
+        gap:12px;
+    }
+}
+.nav-links{
+    flex-wrap;
+    justify-content:center;
+    gap: 14px;
+}
+.hero h1{
+    font-size:34px;
+}
+.card-grid{
+    grid-template-columns:1fr;
+}
+.section{
+    padding:45px 18px;
+}
